@@ -1,0 +1,50 @@
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright 2013 by Helge Walter
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<idea-plugin version="2">
+  <id>de.bewalt.intellij.plugin.cvsinfo</id>
+  <name>CVS Info Plug-In</name>
+  <version>1.0.2</version>
+  <vendor email="helge@bewalt.de" url="http://www.bewalt.de">Helge Walter</vendor>
+
+  <description><![CDATA[
+      This Plugin shows CVS sticky tags in the project view as known from the Eclipse workbench.
+      <p>
+      Known problems:
+      <ul>
+      <li>After a CVS update not in every case the sticky tags are updated immediately. You have to synchronize the module manually or reopen the project.
+      </ul>
+      ]]></description>
+
+  <change-notes><![CDATA[
+      Version 1.0.2: Copyright update and longer description for Guthub deployment.<br>
+      Version 1.0.1: Support for sticky tags on files.<br>
+      Version 1.0.0: Initial release
+      ]]>
+  </change-notes>
+
+  <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Build+Number+Ranges for description -->
+  <idea-version since-build="123.000"/>
+
+  <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+       on how to target different products -->
+  <depends>com.intellij.modules.lang</depends>
+  <depends>CVS</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <projectViewNodeDecorator implementation="de.bewalt.intellij.plugin.cvsinfo.CvsInfoTreeNodeDecorator" order="last"/>
+  </extensions>
+</idea-plugin>
