@@ -31,12 +31,12 @@ import org.jetbrains.annotations.Nullable;
 import org.netbeans.lib.cvsclient.admin.Entry;
 
 /**
- * This file is part of GLOBUS EasyDoc.
+ * This file is part of CVSInfo Plug-In.
  * User: walter
  * Date: 24.01.13
  * Time: 16:18
  * <p/>
- * Insert types description here.
+ * This node decorator provides sticky tag information to project directory or file nodes under CVS control.
  */
 public class CvsInfoTreeNodeDecorator implements ProjectViewNodeDecorator
 {
